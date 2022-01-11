@@ -42,7 +42,7 @@ fun ProcessCameraProvider.rebind(
         lifecycleOwner,
         cameraLens,
         preview,
-        *listOfUsecase.toTypedArray()
+        *listOfUsecase.filterNotNull().toTypedArray()
     )
 }
 

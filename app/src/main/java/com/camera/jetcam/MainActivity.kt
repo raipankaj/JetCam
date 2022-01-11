@@ -52,6 +52,7 @@ class MainActivity : ComponentActivity() {
 
                     Box(modifier = Modifier.fillMaxSize(),
                         contentAlignment = Alignment.BottomCenter) {
+
                         JetCam(
                             imageAnalysis = {
                                 it?.let {
@@ -73,7 +74,9 @@ class MainActivity : ComponentActivity() {
                         )
 
                         Row(
-                            modifier = Modifier.fillMaxWidth().padding(16.dp),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(16.dp),
                             horizontalArrangement = Arrangement.SpaceEvenly) {
                             IconButton(onClick = {
                                 toggleCameraFlash = toggleCameraFlash.not()
@@ -82,7 +85,10 @@ class MainActivity : ComponentActivity() {
                                 } else {
                                     camera?.flashOn()
                                 }
-                            }, modifier = Modifier.size(56.dp).clip(CircleShape).background(Color.LightGray)) {
+                            }, modifier = Modifier
+                                .size(56.dp)
+                                .clip(CircleShape)
+                                .background(Color.LightGray)) {
                                 Icon(
                                     painter = painterResource(
                                         id = if (toggleCameraFlash) R.drawable.ic_flash_off else R.drawable.ic_flash_on
@@ -100,7 +106,10 @@ class MainActivity : ComponentActivity() {
                                     camera?.flashOff()
                                     cameraLensToggle?.toggleToFront()
                                 }
-                            }, modifier = Modifier.size(56.dp).clip(CircleShape).background(Color.LightGray)) {
+                            }, modifier = Modifier
+                                .size(56.dp)
+                                .clip(CircleShape)
+                                .background(Color.LightGray)) {
                                 Icon(
                                     painter = painterResource(id = R.drawable.ic_toggle),
                                     contentDescription = "Toggle Front/Back Cam"
