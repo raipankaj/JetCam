@@ -44,7 +44,7 @@ import java.util.concurrent.Executors
 
 @Composable
 fun JetCam(
-    imageAnalysis: ((ImageProxy?) -> Unit)? = null,
+    imageAnalysis: ((ImageProxy) -> Unit)? = null,
     imageAnalysisConfig: ImageAnalysis? = null,
     imageCapture: ImageCapture? = null,
     defaultCameraLens: Lens = Lens.Back,
@@ -140,7 +140,7 @@ fun JetCam(
     )
 }
 
-private class ImageAnalyzer(val imageProxy: (ImageProxy?) -> Unit) : ImageAnalysis.Analyzer {
+private class ImageAnalyzer(val imageProxy: (ImageProxy) -> Unit) : ImageAnalysis.Analyzer {
     override fun analyze(imageProxy: ImageProxy) {
         val image = imageProxy
         imageProxy(image)
