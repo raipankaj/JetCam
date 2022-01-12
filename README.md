@@ -47,14 +47,13 @@ Congratulations, you have successfully added the dependency.
 Now to get started with JetCam add the following code snippet
 ```kotlin
 JetCam(
-      imageAnalysis = { it?.let {
+      imageAnalysis = { 
                             val buffer = it.planes[0].buffer
                             val data = buffer.toByteArray()
                             val pixels = data.map { it.toInt() and 0xFF }
                             val luma = pixels.average()
 
                             Log.i("LUM", ":${luma}")
-                        }
                     }
 )
 ```
