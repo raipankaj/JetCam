@@ -32,7 +32,7 @@ dependencyResolutionManagement {
 
 Once you have added the maven url now add the Chip dependency in the <b>build.gradle (module level)</b>
 ```groovy
-implementation 'com.github.raipankaj:JetCam:0.1.1'
+implementation 'com.github.raipankaj:JetCam:0.1.2'
 
 def camerax_version = "1.0.2"
 // CameraX core library using camera2 implementation
