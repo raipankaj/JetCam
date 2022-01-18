@@ -55,14 +55,12 @@ class MainActivity : ComponentActivity() {
 
                         JetCam(
                             imageAnalysis = {
-                                it?.let {
-                                    val buffer = it.planes[0].buffer
-                                    val data = buffer.toByteArray()
-                                    val pixels = data.map { it.toInt() and 0xFF }
-                                    val luma = pixels.average()
+                                val buffer = it.planes[0].buffer
+                                val data = buffer.toByteArray()
+                                val pixels = data.map { it.toInt() and 0xFF }
+                                val luma = pixels.average()
 
-                                    Log.i("LUM", ":${luma}")
-                                }
+                                Log.i("LUM", ":${luma}")
                             },
                             imageCapture = imageCapture,
                             cameraLensToggle = { cameraLens ->
