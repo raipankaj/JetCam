@@ -32,7 +32,7 @@ dependencyResolutionManagement {
 
 Once you have added the maven url now add the Chip dependency in the <b>build.gradle (module level)</b>
 ```groovy
-implementation 'com.github.raipankaj:JetCam:0.1.1'
+implementation 'com.github.raipankaj:JetCam:0.1.2'
 
 def camerax_version = "1.0.2"
 // CameraX core library using camera2 implementation
@@ -47,14 +47,13 @@ Congratulations, you have successfully added the dependency.
 Now to get started with JetCam add the following code snippet
 ```kotlin
 JetCam(
-      imageAnalysis = { it?.let {
+      imageAnalysis = { 
                             val buffer = it.planes[0].buffer
                             val data = buffer.toByteArray()
                             val pixels = data.map { it.toInt() and 0xFF }
                             val luma = pixels.average()
 
                             Log.i("LUM", ":${luma}")
-                        }
                     }
 )
 ```
